@@ -69,6 +69,11 @@ public final class PackageResult extends MetaTabulatedResult implements Comparab
     }
 
     @Override
+    public boolean isPackage() {
+        return true;
+    }
+
+    @Override
     public synchronized String getSafeName() {
         if (safeName != null) {
             return safeName;

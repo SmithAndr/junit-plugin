@@ -47,7 +47,7 @@ THE SOFTWARE.
     </table>
   </j:if>
 
-  <j:if test="$(it.parent==null)">
+  <j:if test="${it.isPackage()}">
     <h2>${%Test trend}</h2>
     <img src="../../../../test/trend" />
   </j:if>
