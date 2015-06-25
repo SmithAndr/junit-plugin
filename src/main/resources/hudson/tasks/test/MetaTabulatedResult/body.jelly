@@ -47,6 +47,11 @@ THE SOFTWARE.
     </table>
   </j:if>
 
+  <j:if test="$(it.parent==null)">
+    <h2>${%Test trend}</h2>
+    <img src="../../../../test/trend" />
+  </j:if>
+
   <j:if test="${it.totalCount!=0}">
     <h2>${%All Tests}</h2>
     <table class="pane sortable bigtable" id="testresult">
