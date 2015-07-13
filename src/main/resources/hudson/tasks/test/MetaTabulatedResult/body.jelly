@@ -57,15 +57,9 @@ THE SOFTWARE.
     <table class="pane sortable bigtable" id="testresult">
       <tr>
         <td class="pane-header">${it.childTitle}</td>
-        <td class="pane-header" style="width:5em">${%Duration}</td>
-        <td class="pane-header" style="width:5em">${%Fail}</td>
-        <td class="pane-header" style="width:1em; font-size:smaller; white-space:nowrap;">(${%diff})</td>
-        <td class="pane-header" style="width:5em">${%Skip}</td>
-        <td class="pane-header" style="width:1em; font-size:smaller; white-space:nowrap;">(${%diff})</td>
-        <td class="pane-header" style="width:5em">${%Pass}</td>
-        <td class="pane-header" style="width:1em; font-size:smaller; white-space:nowrap;">(${%diff})</td>
-        <td class="pane-header" style="width:5em">${%Total}</td>
-        <td class="pane-header" style="width:1em; font-size:smaller; white-space:nowrap;">(${%diff})</td>
+        <td class="pane-header" style="width:3em">${%Pass}</td>
+        <td class="pane-header" style="width:3em">${%Fail}</td>
+        <td class="pane-header" style="width:3em">${%Total}</td>
       </tr>
       <tbody>
         <j:set var="prevAll" value="${it.previousResult}" />
@@ -78,23 +72,9 @@ THE SOFTWARE.
                 <st:include it="${badge}" page="badge.jelly" optional="true"/>
               </j:forEach>
             </td>
-            <td class="pane" style="text-align:right" data="${p.duration}">${p.durationString}</td>
-            <td class="pane" style="text-align:right">${p.failCount}</td>
-            <td class="pane" style="text-align:right" data="${p.failCount-prev.failCount}">
-              ${h.getDiffString2(p.failCount-prev.failCount)}
-            </td>
-            <td class="pane" style="text-align:right">${p.skipCount}</td>
-            <td class="pane" style="text-align:right" data="${p.skipCount-prev.skipCount}">
-              ${h.getDiffString2(p.skipCount-prev.skipCount)}
-            </td>
-            <td class="pane" style="text-align:right">${p.passCount}</td>
-            <td class="pane" style="text-align:right">
-              ${h.getDiffString2(p.passCount-prev.passCount)}
-            </td>
-            <td class="pane" style="text-align:right">${p.totalCount}</td>
-            <td class="pane" style="text-align:right" data="${p.totalCount-prev.totalCount}">
-              ${h.getDiffString2(p.totalCount-prev.totalCount)}
-            </td>
+            <td class="pane" style="text-align:center">${p.passCount}</td>
+            <td class="pane" style="text-align:center">${p.failCount}</td>
+            <td class="pane" style="text-align:center">${p.totalCount}</td>
           </tr>
         </j:forEach>
       </tbody>
