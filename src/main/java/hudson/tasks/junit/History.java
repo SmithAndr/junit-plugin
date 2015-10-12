@@ -147,9 +147,9 @@ public class History {
                 }
                 
                 for (TestResult o: list) {
-                    data.add(o.getPassCount(), "2Passed", new ChartLabel(o));
+                    data.add(o.getSkipCount(), "2Skipped", new ChartLabel(o));
                     data.add(o.getFailCount(), "1Failed", new ChartLabel(o));
-                    data.add(o.getSkipCount(), "0Skipped", new ChartLabel(o));
+                    data.add(o.getPassCount(), "0Passed", new ChartLabel(o));
                 }
                 return data;
             }
@@ -229,9 +229,9 @@ public class History {
                 }
             };
             plot.setRenderer(ar);
-            ar.setSeriesPaint(0,ColorPalette.YELLOW); // Skips.
+            ar.setSeriesPaint(0,ColorPalette.BLUE); // Passed.
             ar.setSeriesPaint(1,ColorPalette.RED); // Failures.
-            ar.setSeriesPaint(2,ColorPalette.BLUE); // Total.
+            ar.setSeriesPaint(2,ColorPalette.YELLOW); // Total (including skipped).
 
             // crop extra space around the graph
             plot.setInsets(new RectangleInsets(0, 0, 0, 5.0));
